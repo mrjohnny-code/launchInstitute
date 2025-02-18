@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+html {
+	height: 100%;
+	font-size: 10px;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-width: 320px;
+	background-color: $body-bg;
+	background-image: linear-gradient(to bottom, rgba($white, 0.3) 0%, rgba($white, 0.3) 30%);
+	color: $body-color;
+	font: #{$font-size-base}/$line-height-base $font-family-base;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@include breakpoint_d(sm_576){
+		font-size: 1.6rem;
+	}
+
+	&.menu_opened {
+		overflow: hidden;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $links-color-base;
+	transition: color $transition;
+	outline: none;
+}
+
+ul,
+ol,
+li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+input {
+	appearance: none;
+	border-radius: 0;
+	outline: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+input,
+textarea,
+select,
+button {
+	font: inherit;
+	appearance: none;
+	transition: all $transition;
+	cursor: pointer;
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;;
+}
+
+svg *[fill] {
+	fill: currentColor
+}
+
+svg *[stroke] {
+	stroke: currentColor
+}
+
+svg * {
+	transition-property: fill, stroke;
+}
+
+p {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		margin: 0 0 0.5em;
+		font-weight: $headings-font-weight;
+	}
+}

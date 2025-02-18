@@ -1,0 +1,253 @@
+.content {
+	margin-bottom: 20px;
+
+	&__title {
+		margin-bottom: 28px;
+		font-size: 6.2rem;
+		font-weight: 600;
+		line-height: 1.3;
+
+		@include breakpoint_d(xl_1200){
+			font-size: 5rem;
+		}
+		@include breakpoint_d(lg_992){
+			font-size: 4.5rem;
+		}
+		@include breakpoint_d(md_768){
+			font-size: 3.8rem;
+		}
+		@include breakpoint_d(sm_576){
+			margin-bottom: 15px;
+			font-size: 3rem;
+		}
+	}
+
+	&__tabs {
+		margin-bottom: 17px;
+
+		.content__tab_head {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 25px;
+			flex-wrap: wrap;
+
+			.content__head_item {
+				padding: 10px;
+				border-radius: 16px;
+				color: $red;
+				font-size: 1.6rem;
+				font-weight: 600;
+				letter-spacing: 0.2px;
+				transition: all $transition;
+				cursor: pointer;
+
+				&:hover {
+					opacity: 0.9;
+				}
+
+				&.active {
+					background-color: $red;
+					color: $white;
+				}
+			}
+		}
+	}// /.content__tabs
+
+	&__search {
+		margin-bottom: 100px;
+
+		@include breakpoint_d(md_768){
+			margin-bottom: 40px;
+		}
+
+		&_form {
+			margin-bottom: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 24px;
+
+			@include breakpoint_d(sm_576){
+				flex-wrap: wrap;
+				gap: 15px;
+			}
+
+			.ts-wrapper {
+				width: 100%;
+			}
+
+			.ts-control {
+				padding: 25px 20px;
+				max-height: 70px;
+				border-color: $yellow_dark !important;
+				border-radius: 14px;
+				background: $white !important;
+
+				@include breakpoint_d(sm_576){
+					padding-block: 16px;
+					max-height: 55px;
+				}
+				
+				&:after {
+					opacity: 0;
+				}
+
+				.item,
+				input,
+				input::placeholder {
+					color: $body-color;
+					font-family: $font-family-base;
+					font-size: 1.8rem;
+					font-weight: 600;
+					letter-spacing: 0.1px;
+				}
+
+				.item {
+					line-height: 1.2;
+				}
+
+				input::placeholder {
+					color: $gray;
+				}
+			}// /.ts-control
+
+			.ts-dropdown {
+				border: none;
+				border-radius: 14px;
+				background-color: $white;
+				overflow: hidden;
+
+				.option {
+					padding: 11px 16px;
+					color: $body-color;
+					font-family: $font-family-base;
+					font-size: 1.8rem;
+					font-weight: 400;
+					letter-spacing: 0.1px;
+
+					&.active {
+						background-color: $blue_light;
+					}
+
+					.highlight {
+						background: none;
+						font-weight: 700;
+					}
+				}
+				.no-results {
+					padding: 11px 16px;
+					color: $body-color;
+					font-family: $font-family-base;
+					font-size: 1.8rem;
+					font-weight: 400;
+					letter-spacing: 0.1px;
+				}
+			}// /.ts-dropdown
+
+			.content__form_button {
+				padding: 20px 63px;
+				background-color: $red;
+				border-radius: 14px;
+				border: none;
+				color: $white;
+				font-size: 2rem;
+				font-weight: 600;
+				transition: opacity $transition;
+
+				@include breakpoint_d(sm_576){
+					width: 100%;
+					padding-block: 14px;
+					font-size: 1.8rem;
+				}
+
+				&:hover {
+					opacity: 0.9;
+				}
+			}
+		}
+
+		.content__tags {
+			margin-bottom: 15px;
+
+			.content__tag_list {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				flex-wrap: wrap;
+				gap: 16px;
+
+				.content__tag_item {
+					padding: 5px 12px;
+					background-color: $yellow_light;
+					border-radius: 100px;
+					cursor: pointer;
+					transition: opacity $transition;
+
+					&:hover {
+						opacity: 0.9;
+					}
+				}
+			}
+		}
+	}// /.content__search
+
+	.content__tab_body {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px;
+		margin-bottom: 115px;
+
+		@include breakpoint_d(lg_992){
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include breakpoint_d(md_768){
+			grid-template-columns: repeat(2, 1fr);
+			margin-bottom: 30px;
+		}
+		@include breakpoint_d(sm_576){
+			grid-template-columns: 1fr;
+		}
+
+		.content__tab_item {
+			transition: opacity $transition;
+			will-change: opacity;
+
+			&:hover {
+				opacity: 0.9;
+			}
+
+			.content_item_image {
+				width: 100%;
+				margin-bottom: 21px;
+				
+				@include breakpoint_d(md_768){
+					margin-bottom: 15px;
+				}
+
+				img {
+					width: 100%;
+					height: 9.86vw;
+					object-fit: cover;
+					border-radius: 10px;
+
+					@include breakpoint_d(lg_992){
+						height: 120px;
+					}
+					@include breakpoint_d(sm_576){
+						height: 200px;
+					}
+				}
+			}
+
+			.content__item_title {
+				margin-bottom: 0;
+				font-size: 2.3rem;
+
+				@include breakpoint_d(md_768){
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}// /.content__tab_body
+}

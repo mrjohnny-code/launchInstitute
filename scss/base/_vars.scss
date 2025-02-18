@@ -1,0 +1,44 @@
+// fonts
+$inter: 'Inter', sans-serif;
+$prostoOne: 'ProstoOne', sans-serif;
+
+// media breaklpoints
+$grid-breakpoints: (
+	xs_0: 0,
+	sm_576: 576px,
+	md_768: 768px,
+	lg_992: 992px,
+	xl_1200: 1200px,
+	xxl: 1440px
+);
+
+$grid-breakpoints_u: (
+	xs_0: 0,
+	sm_577: 577px,
+	md_769: 769px,
+	lg_993: 993px,
+	xl_1201: 1201px,
+	xxl: 1441px
+);
+
+// colors
+$white: #ffffff;
+$white_bg: #EEE7E1;
+$black: #000000;
+$gray: #92929D;
+$red: #911016;
+$yellow_light: #FAF8F6;
+$yellow_dark: #A68144;
+$brown: #948171;
+$blue_light: #F1F1F5;
+$blue: #364670;
+
+// base
+$body-bg: $white_bg;
+$body-color: $blue;
+$font-family-base: $inter;
+$font-size-base: 1.8rem;
+$line-height-base: 1.5;
+$links-color-base: inherit;
+$headings-font-weight: 700;
+$transition: .2s ease;
