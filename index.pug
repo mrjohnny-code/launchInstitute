@@ -1,0 +1,96 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Launc Institute Pug
+		link(rel="stylesheet", href="./css/tom-select.default.min.css")
+		link(rel="stylesheet", href="./css/styles.css")
+	body 
+		.wrapper
+			header.header
+				.container 
+					strong.header__logo 
+						a(href="/").header__logo_text
+							span.header__logo_lable ИЗ
+							span.header__logo_name Институт запусков
+					.header__login
+						.header__login_icon
+							img(src="./images/icon/login-avatar.svg", alt="login icon", loading="lazy")
+						.header__login_text
+							span Войти
+			//- header.header
+			section.content
+				.container
+					h1.content__title Биржа вакансий и резюме
+					.content__tabs
+						ul.content__tab_head
+							li.content__head_item.active(data-tab="vakancy") Вакансии
+							li.content__head_item(data-tab="resume") Резюме
+					.content__search
+						form(action="/").content__search_form
+							select#content__select(placeholder="Услуга или специалист", autocomplete="off")
+								-
+									let options = [
+										'Услуга или специалист', 
+										'Копирайтер', 
+										'Механик', 
+										'Шеф-повар', 
+										'Адвокат', 
+										'Создание гайдов', 
+										'Курьер'
+									]
+								each item, index in options
+									if(index == 0) 
+										option(value='')= item
+									else
+										option(value= index)= item
+							button.content__form_button(type="submit") Найти
+						.content__tags
+							ul.content__tag_list
+								li.content__tag_item Копирайтер
+								li.content__tag_item Создание гайдов
+								li.content__tag_item Курьер
+					.content__tab_body
+						-
+							let tabItems = [
+								{
+									dataContent: 'vakancy',
+									img: './images/item-1.png',
+									title: 'Копирайтер'
+								},
+								{
+									dataContent: 'vakancy',
+									img: './images/item-2.png',
+									title: 'Механик'
+								},
+								{
+									dataContent: 'resume',
+									img: './images/item-3.png',
+									title: 'Шеф-повар'
+								},
+								{
+									dataContent: 'resume',
+									img: './images/item-4.png',
+									title: 'Адвокат'
+								}
+							]
+						each tabItem in tabItems
+							.content__tab_item(data-content= tabItem.dataContent)
+								a(href="#")
+									.content_item_image
+										img(src= tabItem.img, alt="image", loading="lazy")
+									h4.content__item_title= tabItem.title
+			//- section.content
+			footer.footer 
+				.container
+					.footer__copyright
+						p &copy; 2023 Институт запусков
+					ul.footer__list
+						li.footer__list_item
+							a(href='#') Политика конфиденциальности
+						li.footer__list_item
+							a(href='#') Правовая информация
+		//- .wrapper
+		script(src="./js/tom-select.complete.js")
+		script(src="./js/app.js")
